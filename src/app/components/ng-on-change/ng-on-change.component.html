@@ -1,0 +1,31 @@
+<br>
+<div class="row border border-primary">
+    <h1 class="col-12">
+        Notifier enfant avec NgOnChanges
+    </h1>
+    <div class="col-6 row border border-secondary">
+        <div class="form-group col-6">
+            <input type="text" class="form-control" placeholder="Nom" name="lastName" [(ngModel)]="lastName">
+        </div>
+        <div class="form-group col-6">
+            <input type="text" class="form-control" placeholder="Prenom" name="firstName" [(ngModel)]="firstName">
+        </div>
+    </div>
+    <div class="col-6 border border-secondary">
+        <app-child-one [firstName]="firstName" [lastName]="lastName"></app-child-one>
+    </div>
+</div>
+<br>
+<div class="row border border-primary">
+    <h1 class="col-12">
+        Notifier parent avec EventEmitter
+    </h1>
+    <div class="col-6 row border border-secondary">
+        <ul>
+            <li *ngFor="let message of messages">{{message}}</li>
+        </ul>
+    </div>
+    <div class="col-6 border border-secondary">
+        <app-child-two (sendMessage)="onSendMessage($event)" (getPoker)="onSendPoker()"></app-child-two>
+    </div>
+</div>

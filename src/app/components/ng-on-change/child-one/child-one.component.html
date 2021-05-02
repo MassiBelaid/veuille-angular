@@ -1,0 +1,10 @@
+<div *ngIf="changeHistory.length > 0">
+    Propriété : 
+    <pre>
+        {{ data | json }}
+    </pre>
+    Historiques des valeurs : 
+    <ul>
+        <li *ngFor="let hist of changeHistory">{{hist}}</li>
+    </ul>
+</div>
